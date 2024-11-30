@@ -73,7 +73,7 @@ function upgrade_oh_my_zsh_custom() {
 
   num_workers=$( printf "%.0f" "$ZSH_CUSTOM_AUTOUPDATE_NUM_WORKERS" )
   set +m
-  find -L "${ZSH_CUSTOM}" -type d -name .git | while read d
+  find -L "${ZSH_CUSTOM}" -name .git | while read d
   do
     if ! test $num_workers -gt 1 2> /dev/null || \
     test $num_workers -gt 16 2> /dev/null; then
